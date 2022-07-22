@@ -98,7 +98,61 @@ body {
 .text-main {
   color: var(--color-soft-main-one);
 }
+.header-con{
+  display: flex;
+  justify-content: flex-end;
+         
+        .contact{
+         
+          @media screen and (max-width:995px){
+            display: none;
+          }   
+          position: relative;
+          .number{
+            margin-top: 10px;
+            display: flex;
+            
 
+            .icon{
+              margin-right: 10px;
+              i{
+               color:#162b3c;
+                font-size: 17px;
+              }
+               p{
+                margin-top:10px;
+                font-size: 10px;
+                
+               }
+             
+              
+            }
+            a{
+              padding: 10px 20px;
+              background-color: #2f5a80;
+              font-size: 17px;
+                color: #fff;
+                border-radius: 5px;
+                border: 2px solid #2f5a80;
+                 i{
+                  margin-right: 15px;
+                  font-size: 20px;
+                 }
+                 &:hover{
+                  background-color: transparent;
+                  color: #2f5a80;
+                 }
+              }
+              p{
+                font-weight: 600;
+                color: #162a3d;
+                font-size: 30px;
+                margin-right: 10px;
+              }
+          }
+        } 
+       
+}
 // Navbar Start
 .page-navbar {
   position: sticky;

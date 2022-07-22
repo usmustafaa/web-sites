@@ -75,6 +75,56 @@ body {
   color: var(--color-soft-main-one);
 }
 
+.header-con {
+  display: flex;
+  justify-content: flex-end;
+}
+.header-con .contact {
+  position: relative;
+}
+@media screen and (max-width: 995px) {
+  .header-con .contact {
+    display: none;
+  }
+}
+.header-con .contact .number {
+  margin-top: 10px;
+  display: flex;
+}
+.header-con .contact .number .icon {
+  margin-right: 10px;
+}
+.header-con .contact .number .icon i {
+  color: #162b3c;
+  font-size: 17px;
+}
+.header-con .contact .number .icon p {
+  margin-top: 10px;
+  font-size: 10px;
+}
+.header-con .contact .number a {
+  padding: 10px 20px;
+  background-color: #2f5a80;
+  font-size: 17px;
+  color: #fff;
+  border-radius: 5px;
+  border: 2px solid #2f5a80;
+}
+.header-con .contact .number a i {
+  margin-right: 15px;
+  font-size: 20px;
+}
+.header-con .contact .number a:hover {
+  background-color: transparent;
+  color: #2f5a80;
+}
+.header-con .contact .number p {
+  font-weight: 600;
+  color: #162a3d;
+  font-size: 30px;
+  margin-right: 10px;
+}
+
 .page-navbar {
   position: -webkit-sticky;
   position: sticky;
