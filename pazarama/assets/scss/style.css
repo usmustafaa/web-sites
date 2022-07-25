@@ -104,7 +104,8 @@ body {
   font-size: 10px;
 }
 .header-con .contact .number a {
-  padding: 10px 20px;
+  padding: 12px 20px;
+  margin-bottom: 10px;
   background-color: #2f5a80;
   font-size: 17px;
   color: #fff;
