@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,  user-scalable=no">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="scss/style.css">
+</head>
+<body>
+    <!--to-do-list-top-start-->
+    <header>
+        <h1>To Do List</h1>
+    </header>
+     <!--to-do-list-top-end->
+
+      <!--to-do-list-content-start-->
+      <form>
+        <div class="add">
+            <input type="text" class="todo-input" placeholder="Ekle...">
+            <button class="todo-button" type="submit"><i class="fa-solid fa-plus"></i></button>
+          </div>
+
+          <div class="select">
+            <select name="todos" class="filter-todo">
+                <option value="all">Hepsi</option>
+                <option value="completed">Tamamlanan</option>
+                <option value="uncompleted">Tamamlanmayan</option>
+            </select>
+           
+          </div>
+      </form>
+      
+
+      <div class="todo-content">
+        
+        <ul class="todo-list"></ul>
+      </div>
+ <!--to-do-list-content-end-->
+<!--aler-start-->
+      <div class="alert-wrapper">
+        <div class="alert-success">
+            <div>Ekleme Başarılı.</div>
+        </div>
+        <div class="alert-warning">
+            <div>Alanı Boş Bırakmayınız !</div>
+        </div>
+      </div>
+<!--aler-end-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://kit.fontawesome.com/de0713e58b.js" crossorigin="anonymous"></script>
+    <script src="./js/data.js"></script>
+
+    
+</body>
+</html>
