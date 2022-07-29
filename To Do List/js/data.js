@@ -6,12 +6,27 @@ const todoFilter = document.querySelector(".filter-todo");
 todoFilter.addEventListener("click", filterTodo);
 
 
+
+
+const startTodo = () => {
+   // baslangic ayarlari
+   const todos = JSON.parse(localStorage.getItem("todos"));
+   if (!todos) {
+      localStorage.setItem("todos", JSON.stringify([]));
+   } else {
+      todos.forEach(todo => {
+         addHTML(todo);
+      });
+   } 
+}
+
 const addTodo = (e) => {
    e.preventDefault();
    
    const inputVal = input.value;
 
    if (inputVal == '')  {
+      alert("Boş Bırakmayınız");
       input.style.border = '1px solid tomato';
       setTimeout(() => {
          input.style.borderColor = 'transparent';
@@ -33,18 +48,7 @@ const addTodo = (e) => {
    form.reset();
 }
 
-const startConf = () => {
-   // baslangic ayarlari
-   const todos = JSON.parse(localStorage.getItem("todos"));
-   if (!todos) {
-      localStorage.setItem("todos", JSON.stringify([]));
-   } else {
-      todos.forEach(todo => {
-         addHTML(todo);
-      });
-   } 
-}
-const deleteTodo = (e) => {
+const clearTodo = (e) => {
    const todo = e.target.parentElement.parentElement;
    const text = todo.firstChild.children[1].textContent;
 
@@ -54,7 +58,6 @@ const deleteTodo = (e) => {
 
    todo.remove();
 }
-
 const completeTodo = (e) => {
    const todo = e.target.parentElement.parentElement;
    const text = todo.firstChild.children[1].textContent;
@@ -64,6 +67,7 @@ const completeTodo = (e) => {
    todos.forEach(td => {
       if (td.text === text) td.isCompleted = !td.isCompleted 
    });
+
 
    localStorage.setItem("todos", JSON.stringify(todos));
 }
@@ -91,10 +95,22 @@ const editTodo = (e) => {
    todo.classList.add("-edited");
 }
 function filterTodo(e){
-
-
+   const data = JSON.parse(localStorage.getItem("todos"));
+  console.log(data);
    
+  const newDate = data.filter(function(elmn){
+   if(elmn.isCompleted == true ){
+      return true;
+   }else{
+
+   }
   
+  })
+  console.log(newDate);
+   
+      
+  
+   
 }
 
 const addHTML = (todo) => {
@@ -112,7 +128,7 @@ const addHTML = (todo) => {
    todoCb.type = "checkbox";
    todoCb.checked = todo.isCompleted; 
    todoCb.classList.add("todo_cb");
-   todoCb.addEventListener("click", completeTodo); // direkt olustururken veriyoruz event listenerlari
+   todoCb.addEventListener("click", completeTodo); 
 
    const todoText = document.createElement("span");
    todoText.classList.add("todo_text");
@@ -128,12 +144,12 @@ const addHTML = (todo) => {
    const deleteBtn = document.createElement("button");
    deleteBtn.classList.add("todo_delete");
    deleteBtn.textContent = "Sil";
-   deleteBtn.addEventListener("click", deleteTodo); // direkt olustururken veriyoruz event listenerlari
+   deleteBtn.addEventListener("click", clearTodo); 
    
    const editBtn = document.createElement("button");
    editBtn.classList.add("todo_edit");
    editBtn.textContent = "Düzenle";
-   editBtn.addEventListener("click", editTodo); // direkt olustururken veriyoruz event listenerlari
+   editBtn.addEventListener("click", editTodo); 
    
    const saveBtn = document.createElement("button");
    saveBtn.classList.add("todo_save");
@@ -150,6 +166,6 @@ const addHTML = (todo) => {
    todo_container.appendChild(todoDiv);
 }
 
-startConf();
+startTodo();
 
 form.addEventListener("submit", addTodo);
