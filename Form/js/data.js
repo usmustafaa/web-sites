@@ -1,4 +1,4 @@
-const userForm = document.getElementById("user-form")
+const userForm = document.getElementById("user-form");
 const Uname = document.getElementById("user-name");
 const surname= document.getElementById("user-surname");
 const password = document.getElementById("password");
@@ -6,9 +6,9 @@ const mail = document.getElementById("user-email");
 const number = document.getElementById("user-number");
 const date = document.getElementById("user-month");
 const color = document.getElementById("user-color");
-const msj = document.getElementById("user-msj");
-const textCont = document.getElementById("text-cont")
-const formBtn = document.getElementById("form-button")
+const msg = document.getElementById("user-msj");
+const textCont = document.getElementById("text-cont");
+const formBtn = document.getElementById("form-button");
 
 
 
@@ -33,6 +33,8 @@ function formControl(){
             return;
        }
     }
+
+
     //surname
     if(surname.value == ""){
         message="Soyadı alanını doldurunuz";
@@ -51,6 +53,7 @@ function formControl(){
     }
     }
 
+
     //password
     if(password.value == ""){
         message="şifre kısmını boş bırakmayınız";
@@ -65,19 +68,27 @@ function formControl(){
         }
     }
 
+
     //maillll
+
+        
+    const email = /[a-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6}/;
+
     if(mail.value == ""){
         message="Mail kısmını boş bırakmayınız";
         textCont.innerHTML= message;
         return;
     }
     if(mail.value != ""){
-       if(mail.value.indexOf("@", 0)==-1 || mail.value.indexOf(".", 0)==-1){
-        message="Mail alanında '@' ve '.' işaretlerini kullanmanız zorunludur";
+       if(!mail.value.match(email)){
+        message="Mail alanınızı @xxxx.xxx formatında girin.";
         textCont.innerHTML= message;
         return;
        }
     }
+
+
+
     //numberrr
   
             const regex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$/im;
@@ -113,13 +124,13 @@ function formControl(){
             textCont.innerHTML=message;
             return
            }
-           if(msj.value==""){
+           if(msg.value==""){
             message="Mesaj alanını boş bırakmayınız";
             textCont.innerHTML=message;
             return;
            }
-           if(msj.value!=""){
-                if(msj.value.length<25){
+           if(msg.value!=""){
+                if(msg.value.length<25){
                     message="Mesaj kısmı en az 25 karakterden oluşmalıdır";
                     textCont.innerHTML=message;
                     return;
@@ -127,5 +138,39 @@ function formControl(){
            }
     userForm.submit();
 }
+
+
+function submitForm(){
+    this.userForm.addEventListener("submit",(e) =>{
+        this.formControl()
+        const data= {
+            name: Name.value,
+            surname: surname.value,
+            password: password.value,
+            email: mail.value,
+            date: date.value,
+            color: color.value,
+            message: msg.value
+        }
+        console.log(data);
+        
+        axios.post('http://localhost:3000/newUser',data).then(res => console.log(res)).catch(err => console.log(err))
+        
+        fetch("http://localhost:3000/newUser",{
+            method: "POST",
+            headers:{
+                'Content-type':'application/json'
+            },
+            body: JSON.stringify(data)
+        }).then(response => response.json()).then(data => console.log(data)).catch(error=> console.log(error))
+        e.preventDefault()
+    })
+    submitForm();
+    console.log(data);
+   
+}
+
+
+
 
 
