@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="scss/style.css">
+    $ npm install axios
+</head>
+<body>
+  <form id="user-form" name="user-form">
+
+    <div class="field">
+        <input type="text"  required autocomplete="off" name="name" id="user-name">
+        <label for="user-name" title=" adınızı giriniz" data-title="adı" ></label>
+    </div>
+    <div class="field">
+        <input type="text" required autocomplete="off" name="surname" id="user-surname">
+        <label for="user-surname" title="Soyadınızı giriniz" data-title="Soyadı" ></label>
+        
+    </div>
+
+    <div class="field">
+        <input type="password" required autocomplete="off" name="password" id="password">
+        <label for="password" title="Şifrenizi giriniz" data-title="Şifre" ></label>
+       
+    </div>
+
+    <div class="field">
+        <input type="text" required autocomplete="off" name="email" id="user-email">
+        <label for="user-email" title="Mail adresinizi giriniz" data-title="Mail" ></label>
+    </div>
+
+    <div class="field">
+        <input type="tel" required autocomplete="off" name="phone" id="user-number">
+        <label for="user-number" title="telefon numaranızı giriniz" data-title="telefon numarası" ></label>
+    </div>
+
+    <div class="field">
+        <input type="date" required autocomplete="off" name="month" id="user-month">
+        <label for="user-month" title="" data-title="Yıl" ></label>
+    </div>
+
+    <div class="field">
+        <input type="color" required autocomplete="off" name="color" id="user-color">
+        <label for="user-color" title="" data-title="" ></label>
+    </div>
+    <div class="field">
+        <textarea required name="" id="user-msj" cols="50" name="msj" rows="10"></textarea>
+        
+    </div>
+    <p id="text-cont"></p>
+    <input id="form-button" class="button" type="button" onclick="formControl()" value="Gönder">
+
+
+
+  </form>  
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+   <script src="./js/data.js"></script> 
+</body>
+</html>
