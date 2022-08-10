@@ -176,7 +176,7 @@ body {
   font-weight: 500;
 }
 .page-navbar .navigation--link a:hover {
-  color: var(--color-pink);
+  color: var(--color-main-one);
 }
 .page-navbar .navigation--btn-wrapper {
   display: flex;
@@ -202,7 +202,7 @@ body {
   color: var(--color-main-one);
 }
 .page-navbar .navigation--btn:hover .navigation--btn-text {
-  color: var(--color-pink);
+  color: var(--color-main-one);
 }
 .page-navbar .navigation--btn i {
   display: block;
@@ -744,7 +744,7 @@ body {
   color: var(--color-white);
 }
 .page-footer--copyright .site-link:hover {
-  color: var(--color-pink);
+  color: var(--color-main-one);
 }
 
 .app-form-header {

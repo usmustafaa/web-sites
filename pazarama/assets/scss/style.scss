@@ -205,7 +205,7 @@ body {
         font-weight: 500;
 
         &:hover {
-          color: var(--color-pink);
+          color: var(--color-main-one);
         }
       }
     }
@@ -235,7 +235,7 @@ body {
         color: var(--color-main-one);
 
         .navigation--btn-text {
-          color: var(--color-pink);
+          color: var(--color-main-one);
         }
       }
 
@@ -813,7 +813,7 @@ height: 50px;
         color: var(--color-white);
   
         &:hover {
-          color: var(--color-pink);
+          color: var(--color-main-one);
         }
       }
     }
