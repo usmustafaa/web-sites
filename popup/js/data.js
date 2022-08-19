@@ -68,19 +68,17 @@ function formPopup(){
 
    const popupArea =document.getElementsByClassName
 }
-
+const popupChild = popup.children;
+console.log(popupChild);
 
 function Close(){
     opc.classList.remove("opc-open");
-    popup.style.display = "none";
+    popup.removeChild(popup.lastElementChild)
+}
 
-}
-function block(){
-    popup.style.display= "block";
-}
 
 
 opc.addEventListener("click", Close);
 button.addEventListener("click", opcOppen);
 button.addEventListener("click", formPopup);
-button.addEventListener("click", block);
+
