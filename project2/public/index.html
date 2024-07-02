@@ -1,0 +1,331 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/public/css/style.css" rel="stylesheet">
+  <title>project</title>
+</head>
+<body class="bg-gray-300 relative overflow-x-hidden">
+ 
+
+<header class="h-16 w-full bg-white p-5 flex justify-between items-center">
+   
+    
+    <button  class="p-2 h-12 text-xl bg-gray-400 hover:bg-gray-600 transition-all duration-100 font-semibold text-md rounded-sm text-white">Farklı işlemler</button>
+    <button onclick="openMenu()" id="menu-btn" class="flex flex-col items-center justify-center p-1 w-12 h-12 text-xl bg-gray-400 hover:bg-gray-600 transition-all duration-100 font-semibold text-md rounded-sm text-white">
+        <div id="line1" class="line w-8 rounded-md h-1 bg-white mb-1"></div>
+        <div id="line2" class="line w-8 rounded-md h-1 bg-white mb-1"></div>
+        <div id="line3" class="line w-8 rounded-md h-1 bg-white "></div>
+    </button>
+</header>
+
+<div id="menu" class="-right-100 absolute w-80 h-96 bg-white bg-opacity-70  transition-all duration-300 z-50 flex flex-col justify-center items-center space-y-10 ">
+  <button class="p-2 h-12 w-52 text-xl text-white bg-blue-400 rounded-sm hover:bg-gray-600 transition-all duration-100">Hesabım</button>
+  <button class="p-2 h-12 w-52 text-xl text-white bg-blue-400 rounded-sm hover:bg-gray-600 transition-all duration-100">Kullanıcı Ekle</button>
+  <button class="p-2 h-12 w-52 text-xl text-white bg-blue-400 rounded-sm hover:bg-gray-600 transition-all duration-100">Çıkış Yap</button>
+</div>
+<div id="opc-menu" onclick="closeMenu()" class="absolute z-40 bg-black w-full h-full opacity-5 hidden"></div>
+
+
+<div class="flex justify-center mt-5 w-full h-full">
+ 
+  <form action="" class="mt-5 ">
+   
+    <div class="flex items-center space-x-3 my-3 ">
+      <button class="p-2 bg-blue-400 font-semibold text-md rounded-sm h-10 items-center text-white hover:bg-gray-600 transition-all duration-100">toplu sipariş gönder</button>
+      <button class="p-2 bg-blue-400 font-semibold text-md rounded-sm h-10 items-center text-white hover:bg-gray-600 transition-all duration-100">seçili sipariş gönder</button>
+      <button class="p-2 bg-blue-400 font-semibold text-md rounded-sm h-10 items-center text-white hover:bg-gray-600 transition-all duration-100">toplu ürün oluştur</button>
+      <button class="p-2 bg-blue-400 font-semibold text-md rounded-sm h-10 items-center text-white hover:bg-gray-600 transition-all duration-100">ürün oluştur</button>
+      <input class="h-10 p-2 outline-none text-gray-600 w-72 rounded-sm" type="text" placeholder="Sipariş-v1">
+      <button class="p-2 bg-blue-400 font-semibold text-md rounded-sm h-10 items-center text-white hover:bg-gray-600 transition-all duration-100">filtrele</button>
+    </div>
+    <table id="myTable" class="table-auto">
+      <thead>
+        <tr class="h-9">
+          <th class="bg-gray-600 text-white"><input type="checkbox" id="topInput" class="custom-checkbox ml-2"></th>
+          <th class="bg-gray-600 text-white w-16 text-center">Detaylar</th>
+          <th class="bg-gray-600 text-white w-40 cursor-pointer"  >Sipariş No</th>
+          <th class="bg-gray-600 text-white w-40 cursor-pointer"  >PazarYeri Kargo</th>
+          <th class="bg-gray-600 text-white w-40 cursor-pointer"  >Mail</th>
+          <th class="bg-gray-600 text-white w-40 cursor-pointer"  onclick="sortTable(6)">Tarih</th>
+          <th class="bg-gray-600 text-white w-40 cursor-pointer"  >Teslim Alıcı</th>
+          <th class="bg-gray-600 text-white w-40 cursor-pointer"  >Teslim Sipariş İli</th>
+          <th class="bg-gray-600 text-white w-40 cursor-pointer"  >Teslim Tel</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="hover:bg-green-200 transition-all duration-100 relative">
+          <td><input type="checkbox" id="1" class="custom-checkbox ml-2" name="active[]"></td>
+          <td class="text-center text-gray-500 hover:text-gray-700 transition-all duration-100 tooltip-icon" onclick="infoOpen(info)"><i class="fa-solid fa-circle-info"></i></td>
+          <td class="text-center" onclick="toggleCheckbox(1)">The Slidasding</td>
+          <td class="text-center" onclick="toggleCheckbox(1)">Malcolmas Lockyer</td>
+          <td class="text-center" onclick="toggleCheckbox(1)">1961</td>
+          <td class="text-center" onclick="toggleCheckbox(1)">22.08.2000/05:37</td>
+          <td class="text-center" onclick="toggleCheckbox(1)">1961</td>
+          <td class="text-center" onclick="toggleCheckbox(1)">1961</td>
+          <td class="text-center" onclick="toggleCheckbox(1)">1961</td>
+        </tr>
+        
+                <tr class="detail-row hidden" id="info"  onclick="toggleCheckbox(1)">
+                  <td colspan="11">
+                    <div class=" w-full flex flex-col p-4">
+                       <table>
+                        <tr class="bg-gray-400 text-white">
+                          <th class="w-14">Ürün Kodu</th>
+                          <th class="w-14">Ürün Adı</th>
+                          <th class="w-14">Kod</th>
+                          <th class="w-14">VarKod</th>
+                          <th class="w-14">Barcode</th>
+                          <th class="w-14">Type</th>
+                          <th class="w-14">Fiyat</th>
+                          <th class="w-14">Miktar</th>
+                          <th class="w-14">Birim</th>
+                          <th class="w-14">Kdv</th>
+                          <th class="w-14">Sipariş kodu</th>
+                        </tr>
+
+                        <tr class="space-x-4 hover:bg-green-400">
+                         
+                          <td class="text-center break-all w-20">1231231231</td>
+                          <td class="text-center break-all w-20">12312</td>
+                          <td class="text-center break-all w-20">1232312312312</td>
+                          <td class="text-center break-all w-20">12312312</td>
+                          <td class="text-center break-all w-20">krop</td>
+                          <td class="text-center break-all w-20">kadın giyim</td>
+                          <td class="text-center break-all w-20">500</td>
+                          <td class="text-center break-all w-20">2</td>
+                          <td class="text-center break-all w-20">₺</td>
+                          <td class="text-center break-all w-20">yok(keşke)</td>
+                          <td class="text-center break-all w-20">12312312</td>
+                        </tr>
+
+                        <tr class="space-x-4 hover:bg-green-400">
+                          <td class="text-center break-all w-20">1231231231</td>
+                          <td class="text-center break-all w-20">12312</td>
+                          <td class="text-center break-all w-20">1232312312312</td>
+                          <td class="text-center break-all w-20">12312312</td>
+                          <td class="text-center break-all w-20">krop</td>
+                          <td class="text-center break-all w-20">kadın giyim</td>
+                          <td class="text-center break-all w-20">500</td>
+                          <td class="text-center break-all w-20">2</td>
+                          <td class="text-center break-all w-20">₺</td>
+                          <td class="text-center break-all w-20">yok(keşke)</td>
+                          <td class="text-center break-all w-20">12312312</td>
+                        </tr>
+
+                       </table>
+                  
+                    </div>
+                  </td>
+                  </tr>
+
+
+          <tr class="hover:bg-green-200 transition-all duration-100 relative">
+          <td><input type="checkbox" id="2" class="custom-checkbox ml-2" name="active[]"></td>
+          <td class="text-center text-gray-500 hover:text-gray-700 transition-all duration-100 tooltip-icon" onclick="infoOpen(info2)"><i class="fa-solid fa-circle-info"></i></td>
+          <td class="text-center" onclick="toggleCheckbox(2)">The asdSliding</td>
+          <td class="text-center" onclick="toggleCheckbox(2)">Malcolm Lasdockyer</td>
+          <td class="text-center" onclick="toggleCheckbox(2)">1961</td>
+          <td class="text-center" onclick="toggleCheckbox(2)">22.08.2000/04:27</td>
+          <td class="text-center" onclick="toggleCheckbox(2)">1961</td>
+          <td class="text-center" onclick="toggleCheckbox(2)">1961</td>
+          <td class="text-center" onclick="toggleCheckbox(2)">1961</td>
+        </tr>
+                <tr class="detail-row hidden" id="info2" onclick="toggleCheckbox(2)">
+                  <td colspan=11">
+                    <div class=" w-full flex flex-col p-4">
+                      <table>
+                       <tr class="bg-gray-400 text-white">
+                         <th class="w-14">Ürün Kodu</th>
+                         <th class="w-14">Ürün Adı</th>
+                         <th class="w-14">Kod</th>
+                         <th class="w-14">VarKod</th>
+                         <th class="w-14">Barcode</th>
+                         <th class="w-14">Type</th>
+                         <th class="w-14">Fiyat</th>
+                         <th class="w-14">Miktar</th>
+                         <th class="w-14">Birim</th>
+                         <th class="w-14">Kdv</th>
+                         <th class="w-14">Sipariş kodu</th>
+                       </tr>
+
+                       <tr class="space-x-4 hover:bg-green-400">
+                        
+                         <td class="text-center break-all w-20">1231231231</td>
+                         <td class="text-center break-all w-20">12312</td>
+                         <td class="text-center break-all w-20">1232312312312</td>
+                         <td class="text-center break-all w-20">12312312</td>
+                         <td class="text-center break-all w-20">krop</td>
+                         <td class="text-center break-all w-20">kadın giyim</td>
+                         <td class="text-center break-all w-20">500</td>
+                         <td class="text-center break-all w-20">2</td>
+                         <td class="text-center break-all w-20">₺</td>
+                         <td class="text-center break-all w-20">yok(keşke)</td>
+                         <td class="text-center break-all w-20">12312312</td>
+                       </tr>
+
+                       <tr class="space-x-4 hover:bg-green-400">
+                         <td class="text-center break-all w-20">1231231231</td>
+                         <td class="text-center break-all w-20">12312</td>
+                         <td class="text-center break-all w-20">1232312312312</td>
+                         <td class="text-center break-all w-20">12312312</td>
+                         <td class="text-center break-all w-20">krop</td>
+                         <td class="text-center break-all w-20">kadın giyim</td>
+                         <td class="text-center break-all w-20">500</td>
+                         <td class="text-center break-all w-20">2</td>
+                         <td class="text-center break-all w-20">₺</td>
+                         <td class="text-center break-all w-20">yok(keşke)</td>
+                         <td class="text-center break-all w-20">12312312</td>
+                       </tr>
+
+                      </table>
+                 
+                   </div>
+                  </td>
+                  </tr>
+
+
+        <tr class="hover:bg-green-200 transition-all duration-100 relative">
+          <td><input type="checkbox" id="3" class="custom-checkbox ml-2" name="active[]"></td>
+          <td class="text-center text-gray-500 hover:text-gray-700 transition-all duration-100 tooltip-icon" onclick="infoOpen(info3)"><i class="fa-solid fa-circle-info"></i></td>
+          <td class="text-center" onclick="toggleCheckbox(3)">The Sliding</td>
+          <td class="text-center" onclick="toggleCheckbox(3)">Malcolm Lockyer</td>
+          <td class="text-center" onclick="toggleCheckbox(3)">1961</td>
+          <td class="text-center" onclick="toggleCheckbox(3)">22.08.2000/01:53</td>
+          <td class="text-center" onclick="toggleCheckbox(3)">1961</td>
+          <td class="text-center" onclick="toggleCheckbox(3)">1961</td>
+          <td class="text-center" onclick="toggleCheckbox(3)">1961</td>
+        </tr>
+                <tr class="detail-row hidden" id="info3" onclick="toggleCheckbox(3)">
+                  <td colspan="11">
+                    <div class=" w-full flex flex-col p-4">
+                      <table>
+                       <tr class="bg-gray-400 text-white">
+                         <th class="w-14">Ürün Kodu</th>
+                         <th class="w-14">Ürün Adı</th>
+                         <th class="w-14">Kod</th>
+                         <th class="w-14">VarKod</th>
+                         <th class="w-14">Barcode</th>
+                         <th class="w-14">Type</th>
+                         <th class="w-14">Fiyat</th>
+                         <th class="w-14">Miktar</th>
+                         <th class="w-14">Birim</th>
+                         <th class="w-14">Kdv</th>
+                         <th class="w-14">Sipariş kodu</th>
+                       </tr>
+
+                       <tr class="space-x-4 hover:bg-green-400">
+                        
+                         <td class="text-center break-all w-20">1231231231</td>
+                         <td class="text-center break-all w-20">12312</td>
+                         <td class="text-center break-all w-20">1232312312312</td>
+                         <td class="text-center break-all w-20">12312312</td>
+                         <td class="text-center break-all w-20">krop</td>
+                         <td class="text-center break-all w-20">kadın giyim</td>
+                         <td class="text-center break-all w-20">500</td>
+                         <td class="text-center break-all w-20">2</td>
+                         <td class="text-center break-all w-20">₺</td>
+                         <td class="text-center break-all w-20">yok(keşke)</td>
+                         <td class="text-center break-all w-20">12312312</td>
+                       </tr>
+
+                       <tr class="space-x-4 hover:bg-green-400">
+                         <td class="text-center break-all w-20">1231231231</td>
+                         <td class="text-center break-all w-20">12312</td>
+                         <td class="text-center break-all w-20">1232312312312</td>
+                         <td class="text-center break-all w-20">12312312</td>
+                         <td class="text-center break-all w-20">krop</td>
+                         <td class="text-center break-all w-20">kadın giyim</td>
+                         <td class="text-center break-all w-20">500</td>
+                         <td class="text-center break-all w-20">2</td>
+                         <td class="text-center break-all w-20">₺</td>
+                         <td class="text-center break-all w-20">yok(keşke)</td>
+                         <td class="text-center break-all w-20">12312312</td>
+                       </tr>
+
+                      </table>
+                 
+                   </div>
+                  </td>
+                  </tr>
+
+
+        <tr class="hover:bg-green-200 transition-all duration-100 relative">
+          <td><input type="checkbox" id="4" class="custom-checkbox ml-2" name="active[]"></td>
+          <td class="text-center text-gray-500 hover:text-gray-700 transition-all duration-100 tooltip-icon" onclick="infoOpen(info4)"><i class="fa-solid fa-circle-info"></i></td>
+          <td class="text-center" onclick="toggleCheckbox(4)">The Sliding</td>
+          <td class="text-center" onclick="toggleCheckbox(4)">Malcolm Lockyer</td>
+          <td class="text-center" onclick="toggleCheckbox(4)">191</td>
+          <td class="text-center" onclick="toggleCheckbox(4)">22.08.2000/07:17</td>
+          <td class="text-center" onclick="toggleCheckbox(4)">191</td>
+          <td class="text-center" onclick="toggleCheckbox(4)">191</td>
+          <td class="text-center" onclick="toggleCheckbox(4)">161</td>
+        </tr>
+                <tr class="detail-row hidden" id="info4" onclick="toggleCheckbox(4)">
+                <td colspan="11" >
+                  <div class=" w-full flex flex-col p-4">
+                    <table>
+                     <tr class="bg-gray-400 text-white">
+                       <th class="w-14">Ürün Kodu</th>
+                       <th class="w-14">Ürün Adı</th>
+                       <th class="w-14">Kod</th>
+                       <th class="w-14">VarKod</th>
+                       <th class="w-14">Barcode</th>
+                       <th class="w-14">Type</th>
+                       <th class="w-14">Fiyat</th>
+                       <th class="w-14">Miktar</th>
+                       <th class="w-14">Birim</th>
+                       <th class="w-14">Kdv</th>
+                       <th class="w-14">Sipariş kodu</th>
+                     </tr>
+
+                     <tr class="space-x-4 hover:bg-green-400">
+                      
+                       <td class="text-center break-all w-20">1231231231</td>
+                       <td class="text-center break-all w-20">12312</td>
+                       <td class="text-center break-all w-20">1232312312312</td>
+                       <td class="text-center break-all w-20">12312312</td>
+                       <td class="text-center break-all w-20">krop</td>
+                       <td class="text-center break-all w-20">kadın giyim</td>
+                       <td class="text-center break-all w-20">500</td>
+                       <td class="text-center break-all w-20">2</td>
+                       <td class="text-center break-all w-20">₺</td>
+                       <td class="text-center break-all w-20">yok(keşke)</td>
+                       <td class="text-center break-all w-20">12312312</td>
+                     </tr>
+
+                     <tr class="space-x-4 hover:bg-green-400">
+                       <td class="text-center break-all w-20">1231231231</td>
+                       <td class="text-center break-all w-20">12312</td>
+                       <td class="text-center break-all w-20">1232312312312</td>
+                       <td class="text-center break-all w-20">12312312</td>
+                       <td class="text-center break-all w-20">krop</td>
+                       <td class="text-center break-all w-20">kadın giyim</td>
+                       <td class="text-center break-all w-20">500</td>
+                       <td class="text-center break-all w-20">2</td>
+                       <td class="text-center break-all w-20">₺</td>
+                       <td class="text-center break-all w-20">yok(keşke)</td>
+                       <td class="text-center break-all w-20">12312312</td>
+                     </tr>
+
+                    </table>
+               
+                 </div>
+                </td>
+                </tr>
+
+
+        
+      </tbody>
+    </table>
+  </div>
+
+  <script src="js/tableCheck.js"></script>
+  <script src="js/info.js"></script>
+  <script src="js/upperLower.js"></script>
+  <script src="js/menu.js"></script>
+ <script src="https://kit.fontawesome.com/de0713e58b.js" crossorigin="anonymous"></script> 
+</form>
+</body>
+</html>

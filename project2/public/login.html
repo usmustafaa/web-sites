@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/public/css/style.css" rel="stylesheet">
+  <title>Login</title>
+</head>
+<body class=" w-full h-full overflow-hidden">
+ <div class="flex items-center h-full relative">
+    <div class="w-1/4 absolute p-10 rota bg-black flex flex-col justify-center items-center rounded-md opacity-30 hover:opacity-100 shadow-2xl shadow-black transition-all duration-150">
+      <form action="" class="grid">
+        <!-- <label class="text-gray-600" for="mail">Web Sitesi</label> -->
+        <input class="w-80 h-11 border-b-2 border-gray-400 font-semibold outline-none p-4 mb-6 bg-black text-white" type="text" id="mail" placeholder="Web Sitesi">
+        <!-- <label class="text-gray-600" for="user">Kullanıcı Adı</label> -->
+        <input class="w-80 h-11 border-b-2 border-gray-400 font-semibold outline-none p-4 mb-6 bg-black text-white" type="text" id="user" placeholder="Kullanıcı Adı">
+        <!-- <label class="text-gray-600" for="password">Şifre</label> -->
+        <div class="relative">
+          <input class="w-80 h-11 border-b-2 border-gray-400 font-semibold outline-none p-4 bg-black text-white" type="password" placeholder="Şifre" id="password" name="password">
+          <button class="text-gray-400 absolute right-1 top-3" onclick="togglePasswordVisibility()"><i class="fa-regular fa-eye"></i></button>
+        </div>
+        <input class="mt-10 rounded-md bg-blue-500 h-11 text-black font-medium text-xl w-80 cursor-pointer hover:bg-blue-600 transition-all duration-100" type="submit" value="Giriş Yap">
+      </form>
+    </div>
+    <div class="w-full h-full rounded-xl slideshow image-container"  id="slideshow">
+      <img class="h-full w-full rounded-xl " src="images/image.jpg" oncopy="return false" alt="">
+  </div>
+ </div>
+
+ <script src="js/noCopy.js"></script>
+ <script src="js/changeImg.js"></script>
+ <script src="js/showpassword.js"></script>
+ <script src="https://kit.fontawesome.com/de0713e58b.js" crossorigin="anonymous"></script> 
+</body>
+</html>
