@@ -1,0 +1,526 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOODY STORE</title>
+  <link href="css/style.css" rel="stylesheet">
+
+  
+
+  <!-- fontawsome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="relative h-full">
+
+                                  <!-- responsive menu -->
+  <div id="opc" onclick="closeResp()"  class="absolute w-full h-full bg-black opacity-25 z-20 hidden "></div>   
+  <div id="respMenu" class="absolute left-0 w-82 h-full bg-custom z-30 hidden ">
+    <div class="flex justify-end"> <button id="close" onclick="closeResp()" class="flex justify-center items-center  w-7 h-7 rounded-full bg-white " ><i class="fa-solid fa-xmark"></i></button></div>
+      <div class="h-96 fixed mx-6">
+       <div class="relative flex items-center justify-center mt-5">
+        <input class=" h-8 outline-none bg-gray-100 rounded-lg w-64 p-5 text-lg" type="text" placeholder="Search...">
+        <button  class="absolute right-2 text-lg font-bold cursor-pointer text-gray-500 hover:text-black transition-all duration-100" for=""><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+       <div class="flex items-start flex-col space-y-7 mt-7">
+          <a class="flex justify-center items-center whitespace-nowrap text-gray-400 hover:text-white transition-all duration-100"  href="/content/index.html">HOME</a>
+          <a class="flex justify-center items-center whitespace-nowrap text-gray-400 hover:text-white transition-all duration-100"   href="/content/catagory.html">STORE</a>
+          <a class="flex justify-center items-center whitespace-nowrap text-gray-400 hover:text-white transition-all duration-100"  href="">ACCESSORIES</a>
+          <a class="flex justify-center items-center whitespace-nowrap text-gray-400 hover:text-white transition-all duration-100"  href="">BRAND</a>
+          <a class="flex justify-center items-center whitespace-nowrap text-gray-400 hover:text-white transition-all duration-100"  href="">PAGES</a>
+          <a class="flex justify-center items-center whitespace-nowrap text-gray-400 hover:text-white transition-all duration-100"  href="">CONTACT US</a>
+        </div>
+      </div>
+  </div>
+
+                                              <!-- header -->
+  <header class="w-full ">
+    <div class=" h-16">
+      <div class="h-16 flex justify-between mx-5 md:mx-24 items-center md:border-b-2 border-black">
+        <h1 class="text-lg md:text-2xl font-bold cursor-pointer"><a href="index.html">MOODY STUDIO</a></h1>
+        <div class="space-x-6 md:space-x-10 flex justify-center items-center">
+          <div class="relative hidden lg:flex items-center">
+            <input class="relative h-8 outline-none bg-gray-100 rounded-lg w-72 p-5 text-lg" type="text" placeholder="Search...">
+            <button  class="absolute right-2 text-lg font-bold cursor-pointer text-gray-500 hover:text-black transition-all duration-100" for=""><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+          <a class="text-lg font-bold cursor-pointer text-gray-500 hover:text-black transition-all duration-100"><i class="fa-regular fa-user"></i></a>
+          <a class="text-lg font-bold cursor-pointer text-gray-500 hover:text-black transition-all duration-100"  href="/content/payArea.html"><i class="fa-solid fa-basket-shopping"></i></a>
+          <a class="hidden lg:block text-lg font-bold cursor-pointer text-gray-500 hover:text-black transition-all duration-100"><i class="fa-regular fa-heart"></i></a>
+          <button id="open" onclick="openResp()" class="lg:hidden text-lg font-bold cursor-pointer text-gray-500 hover:text-black transition-all duration-100"><i class="fa-solid fa-bars"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="h-16 mt-4 mb-4 hidden lg:block">
+        <div  class="h-16 mx-24  border-b-2 border-black">
+              <div class="flex space-x-8 xl:space-x-14 justify-center items-center w-full h-16">
+                <a class=" whitespace-nowrap text-gray-500 hover:text-black transition-all duration-100"  href="/content/index.html">HOME</a>
+                <a class=" whitespace-nowrap text-gray-500 hover:text-black transition-all duration-100"   href="/content/catagory.html">STORE</a>
+                <a class=" whitespace-nowrap text-gray-500 hover:text-black transition-all duration-100"  href="">ACCESSORIES</a>
+                <a class=" whitespace-nowrap text-gray-500 hover:text-black transition-all duration-100"  href="">BRAND</a>
+                <a class=" whitespace-nowrap text-gray-500 hover:text-black transition-all duration-100"  href="">PAGES</a>
+                <a class=" whitespace-nowrap text-gray-500 hover:text-black transition-all duration-100"  href="">CONTACT US</a>
+              </div>
+        </div>
+    </div>
+  </header>
+
+<div class="flex flex-col justify-center items-center space-y-7 py-7 bg-gray-200">
+    <div class="flex flex-col justify-center items-center space-y-3">
+        <h1 class="font-bold text-3xl">MEMBER EXCLUSIVE</h1>
+        <h2 class="font-medium mx-4 text-center md:text-3xl">15% OFF EVERYTHING + EXTRA $10 OFF FOR PLUS STATUS</h2>
+    </div>
+        <p class="text-sm">NOT A MEMBER? JOIN NOW TO SHOP.</p>
+</div>
+
+
+
+                                        <!-- catagories -->
+<div class=" relative catagories w-full flex mt-24 ">
+<div id="filterArea" class="w-96 absolute xl:relative z-10 bg-gray-100 xl:bg-transparent border-2 xl:border-none border-black p-6 xl:w-1/4 left-200- xl:left-0  transition-all duration-150 xl:block">
+  <div class="flex justify-end xl:hidden"> <button id="closeFilter" class="flex justify-end items-end text-xl" onclick="closeFilter()"><i class="fa-solid fa-xmark"></i></button></div> 
+  <div class="space-y-10 mx-24 xl:mx-12 2xl:mx-24">
+
+        <div class="flex flex-col">
+            <div>
+             <h1 class="text-xl font-bold">New Arrivals</h1>
+             <button class="text-sm text-gray-500 hover:text-black active:text-red-600">New Arrivals</button>
+            </div>
+        </div>
+
+         <div class="flex flex-col justify-start items-start space-y-3">
+         
+             <h1 class="text-xl font-bold">Shop By Room</h1>
+             <button onclick="openBadroom()" class="text-sm text-gray-500 hover:text-black active:text-red-600 font-bold">Badroom</button>
+                     <div id="badroom" class="w-full  flex-col justify-center items-center space-y-3 hidden">
+                         <button class="text-sm text-gray-500 hover:text-black active:text-red-600">duvet cover sets</button>
+                         <button class="text-sm text-gray-500 hover:text-black active:text-red-600">sheets</button>
+                         <button class="text-sm text-gray-500 hover:text-black active:text-red-600">bedspreads & blankets</button>
+                         <button class="text-sm text-gray-500 hover:text-black active:text-red-600">blankets</button>
+                         <button class="text-sm text-gray-500 hover:text-black active:text-red-600">cutains</button>
+                         <button class="text-sm text-gray-500 hover:text-black active:text-red-600">pillowcases</button>
+                         <button class="text-sm text-gray-500 hover:text-black active:text-red-600">rugs</button>
+                     </div>
+
+            <button onclick="openLivingRoom()" class="text-sm text-gray-500 hover:text-black active:text-red-600 font-bold">living room</button> 
+                    <div id="livingRoom" class="w-full flex-col justify-center items-center space-y-3 hidden">
+                        <button class="text-sm text-gray-500 hover:text-black active:text-red-600">duvet cover sets</button>
+                        <button class="text-sm text-gray-500 hover:text-black active:text-red-600">sheets</button>
+                        <button class="text-sm text-gray-500 hover:text-black active:text-red-600">bedspreads & blankets</button>
+                        <button class="text-sm text-gray-500 hover:text-black active:text-red-600">blankets</button>
+                        <button class="text-sm text-gray-500 hover:text-black active:text-red-600">cutains</button>
+                        <button class="text-sm text-gray-500 hover:text-black active:text-red-600">pillowcases</button>
+                        <button class="text-sm text-gray-500 hover:text-black active:text-red-600">rugs</button>
+                    </div>
+
+            <button onclick="openChildRoom()" class="text-sm text-gray-500 hover:text-black active:text-red-600 font-bold">child room</button>
+                    <div id="childRoom" class="w-full flex-col justify-center items-center space-y-3 hidden">
+                        <button class="text-sm text-gray-500 hover:text-black active:text-red-600">duvet cover sets</button>
+                        <button class="text-sm text-gray-500 hover:text-black active:text-red-600">sheets</button>
+                        <button class="text-sm text-gray-500 hover:text-black active:text-red-600">bedspreads & blankets</button>
+                        <button class="text-sm text-gray-500 hover:text-black active:text-red-600">blankets</button>
+                        <button class="text-sm text-gray-500 hover:text-black active:text-red-600">cutains</button>
+                        <button class="text-sm text-gray-500 hover:text-black active:text-red-600">pillowcases</button>
+                        <button class="text-sm text-gray-500 hover:text-black active:text-red-600">rugs</button>
+                    </div>
+
+            <button onclick="openBathroom()" class="text-sm text-gray-500 hover:text-black active:text-red-600 font-bold">bathroom</button>
+                    <div id="bathroom" class="w-full flex-col justify-center items-center space-y-3 hidden">
+                        <button class="text-sm text-gray-500 hover:text-black active:text-red-600">duvet cover sets</button>
+                        <button class="text-sm text-gray-500 hover:text-black active:text-red-600">sheets</button>
+                        <button class="text-sm text-gray-500 hover:text-black active:text-red-600">bedspreads & blankets</button>
+                        <button class="text-sm text-gray-500 hover:text-black active:text-red-600">blankets</button>
+                        <button class="text-sm text-gray-500 hover:text-black active:text-red-600">cutains</button>
+                        <button class="text-sm text-gray-500 hover:text-black active:text-red-600">pillowcases</button>
+                        <button class="text-sm text-gray-500 hover:text-black active:text-red-600">rugs</button>
+                    </div>
+
+            <button onclick="openOutdoor()" class="text-sm text-gray-500 hover:text-black active:text-red-600 font-bold">Outdoor</button>
+                    <div id="outdoor" class="w-full flex-col justify-center items-center space-y-3 hidden">
+                        <button class="text-sm text-gray-500 hover:text-black active:text-red-600">duvet cover sets</button>
+                        <button class="text-sm text-gray-500 hover:text-black active:text-red-600">sheets</button>
+                        <button class="text-sm text-gray-500 hover:text-black active:text-red-600">bedspreads & blankets</button>
+                        <button class="text-sm text-gray-500 hover:text-black active:text-red-600">blankets</button>
+                        <button class="text-sm text-gray-500 hover:text-black active:text-red-600">cutains</button>
+                        <button class="text-sm text-gray-500 hover:text-black active:text-red-600">pillowcases</button>
+                        <button class="text-sm text-gray-500 hover:text-black active:text-red-600">rugs</button>
+                    </div>       
+        </div>
+
+            <div class="flex flex-col justify-start items-start space-y-3">
+                <h1 class="text-xl font-bold">Shop By Concept</h1>
+                <button class="text-sm text-gray-500 hover:text-black active:text-red-600 font-bold">Conscious</button>
+                <button class="text-sm text-gray-500 hover:text-black active:text-red-600 font-bold">premium quality</button>
+                <button class="text-sm text-gray-500 hover:text-black active:text-red-600 font-bold">classic collection</button>
+            </div>
+
+            <div class="flex flex-col justify-start items-start space-y-3">
+                <h1 class="text-xl font-bold">Shop By Concept</h1>
+                <div class="custom-checkbox">
+                    <input type="checkbox" name="" id="man">
+                    <label for="man">Man</label>
+                </div>
+                <div class="custom-checkbox">
+                    <input type="checkbox" name="" id="woman">
+                    <label for="woman">Woman</label>
+                </div>
+            </div>
+
+            <div class="">
+                <h1 class="text-xl font-bold">Color</h1>
+                <div class=" grid grid-cols-6 gap-2">
+                  <button class="colorButton w-5 h-5 border border-gray-400 bg-white rounded-sm"></button>
+                  <button class="colorButton w-5 h-5 border border-gray-400 bg-black rounded-sm"></button>
+                  <button class="colorButton w-5 h-5 border border-gray-400 bg-gray-200 rounded-sm"></button>
+                  <button class="colorButton w-5 h-5 border border-gray-400 bg-yellow-300 rounded-sm"></button>
+                  <button class="colorButton w-5 h-5 border border-gray-400 bg-orange-400 rounded-sm"></button>
+                  <button class="colorButton w-5 h-5 border border-gray-400 bg-red-500 rounded-sm"></button>
+                  <button class="colorButton w-5 h-5 border border-gray-400 bg-purple-400 rounded-sm"></button>
+                  <button class="colorButton w-5 h-5 border border-gray-400 bg-blue-400 rounded-sm"></button>
+                  <button class="colorButton w-5 h-5 border border-gray-400 bg-green-500 rounded-sm"></button>
+                  <button class="colorButton w-5 h-5 border border-gray-400 bg-green-800 rounded-sm"></button>
+                  <button class="colorButton w-5 h-5 border border-gray-400 bg-blue-600 rounded-sm"></button>
+                  <button class="colorButton w-5 h-5 border border-gray-400 bg-red-600 rounded-sm"></button>
+                  <button class="colorButton w-5 h-5 border border-gray-400 bg-amber-950 rounded-sm"></button>
+                  <button class="colorButton w-5 h-5 border border-gray-400 bg-blue-700 rounded-sm"></button>
+                  <button class="colorButton w-5 h-5 border border-gray-400 bg-amber-800 rounded-sm"></button>
+                  <button class="colorButton w-5 h-5 border border-gray-400 bg-blue-900 rounded-sm"></button>
+                  <button class="colorButton w-5 h-5 border border-gray-400 bg-sky-900 rounded-sm"></button>
+                  <button class="colorButton w-5 h-5 border border-gray-400 bg-green-900 rounded-sm"></button>
+                </div>
+            </div>
+
+            <div>
+                <h1 class="text-xl font-bold">Price</h1>
+                <div class="custom-checkbox">
+                    <input type="checkbox" name="" id="one">
+                    <label for="one">0$ – 40$</label>
+                </div>
+                <div class="custom-checkbox">
+                    <input type="checkbox" name="" id="two">
+                    <label for="two">40$ – 100$</label>
+                </div>
+                <div class="custom-checkbox">
+                    <input type="checkbox" name="" id="three">
+                    <label for="three">100$ – 150$</label>
+                </div>
+                <div class="custom-checkbox">
+                    <input type="checkbox" name="" id="four">
+                    <label for="four">150$ – 175$</label>
+                </div>
+                <div class="custom-checkbox">
+                    <input type="checkbox" name="" id="five">
+                    <label for="five">175$ – 250$</label>
+                </div>
+                <div class="custom-checkbox">
+                    <input type="checkbox" name="" id="six">
+                    <label for="six">250$ – 350$</label>
+                </div>
+            </div>
+
+           
+    </div>
+    <div class="flex space-x-5 mt-8 justify-center">
+      <button onclick="closeFilter()" class="xl:hidden w-44 h-10 bg-white text-custom border-2 border-custom hover:text-white hover:bg-custom transition-all duration-100 cursor-pointer">DONE</button>
+      <input  class="w-44 h-10 bg-custom text-white border-2 border-custom hover:text-custom hover:bg-white transition-all duration-100 cursor-pointer" type="submit" value="FİLTER">
+    </div>
+</div>
+
+
+                                                    <!-- right content -->
+    <div class="w-full justify-center items-center xl:w-3/4 space-y-6 mx-6 md:mx-24 xl:mx-0 xl:pe-12 2xl:pe-24">
+       <div class="space-y-6">
+        <h1 class="text-3xl font-bold">BEDROOM</h1>
+        <p class="text-sm text-gray-400 font-bold">ITS EASY TO TRANSFORM YOUR BEDROOM INTERIOR WITH OUR GREAT SELECTION OF ACCESSORIES.</p>
+       </div>
+
+        <div>
+            <div class="flex justify-between  ">
+              <button id="filterButton" class="space-x-3 flex items-center text-gray-600 cursor-pointer  hover:text-black xl:hidden"><i class="fa-solid fa-filter"></i> FILTER & SORT</button>
+              <div class="space-x-5 md:space-x-16 text-gray-600">
+                <button class="cursor-pointer hover:text-black">Models</button>
+                <button class="cursor-pointer hover:text-black">Products</button>
+              </div>
+            </div>
+
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-10 mt-4">
+
+              <div class="w-80 h-128">
+                <div class="group relative cursor-pointer">
+                  <img class="w-full" src="images/badroom/Rectangle 62.png" alt="">
+                  <div class="absolute flex justify-center items-center top-1/2  left-20 bg-white w-40 h-12 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-100">
+                    <button class="w-16  h-7 text-xl text-gray-500 hover:text-gray-950 transition-all duration-100 border-r-2 border-black flex justify-center items-center"><i class="fa-solid fa-basket-shopping"></i></button>
+                    <button class="w-16  h-7 text-xl text-gray-500 hover:text-gray-950 transition-all duration-100 flex justify-center items-center"><i class="fa-regular fa-heart"></i></button>
+                  </div>
+                  </div>
+                <div class="space-y-4 mt-4">
+                  <h1 class="text-xl font-semibold">Velvet Covvered</h1>
+                  <div class="flex space-x-1"><p class="w-3 h-3 rounded-full bg-red-600"></p> <p class="w-3 h-3 rounded-full bg-green-600"></p></div>
+                  <h1 class="text-2xl font-bold">39$</h1>
+                </div>
+              </div>
+
+              <div class="w-80 h-128">
+                <div class="group relative cursor-pointer">
+                  <img class="w-full" src="images/badroom/Rectangle 62.png" alt="">
+                  <div class="absolute flex justify-center items-center top-1/2  left-20 bg-white w-40 h-12 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-100">
+                    <button class="w-16  h-7 text-xl text-gray-500 hover:text-gray-950 transition-all duration-100 border-r-2 border-black flex justify-center items-center"><i class="fa-solid fa-basket-shopping"></i></button>
+                    <button class="w-16  h-7 text-xl text-gray-500 hover:text-gray-950 transition-all duration-100 flex justify-center items-center"><i class="fa-regular fa-heart"></i></button>
+                  </div>
+                  </div>
+                <div class="space-y-4 mt-4">
+                  <h1 class="text-xl font-semibold">Velvet Covvered</h1>
+                  <div class="flex space-x-1"><p class="w-3 h-3 rounded-full bg-red-600"></p> <p class="w-3 h-3 rounded-full bg-green-600"></p></div>
+                  <h1 class="text-2xl font-bold">39$</h1>
+                </div>
+              </div>
+
+              <div class="w-80 h-128">
+                <div class="group relative cursor-pointer">
+                  <img class="w-full" src="images/badroom/Rectangle 62.png" alt="">
+                  <div class="absolute flex justify-center items-center top-1/2  left-20 bg-white w-40 h-12 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-100">
+                    <button class="w-16  h-7 text-xl text-gray-500 hover:text-gray-950 transition-all duration-100 border-r-2 border-black flex justify-center items-center"><i class="fa-solid fa-basket-shopping"></i></button>
+                    <button class="w-16  h-7 text-xl text-gray-500 hover:text-gray-950 transition-all duration-100 flex justify-center items-center"><i class="fa-regular fa-heart"></i></button>
+                  </div>
+                  </div>
+                <div class="space-y-4 mt-4">
+                  <h1 class="text-xl font-semibold">Velvet Covvered</h1>
+                  <div class="flex space-x-1"><p class="w-3 h-3 rounded-full bg-red-600"></p> <p class="w-3 h-3 rounded-full bg-green-600"></p></div>
+                  <h1 class="text-2xl font-bold">39$</h1>
+                </div>
+              </div>
+
+              <div class="w-80 h-128">
+                <div class="group relative cursor-pointer">
+                  <img class="w-full" src="images/badroom/Rectangle 62.png" alt="">
+                  <div class="absolute flex justify-center items-center top-1/2  left-20 bg-white w-40 h-12 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-100">
+                    <button class="w-16  h-7 text-xl text-gray-500 hover:text-gray-950 transition-all duration-100 border-r-2 border-black flex justify-center items-center"><i class="fa-solid fa-basket-shopping"></i></button>
+                    <button class="w-16  h-7 text-xl text-gray-500 hover:text-gray-950 transition-all duration-100 flex justify-center items-center"><i class="fa-regular fa-heart"></i></button>
+                  </div>
+                  </div>
+                <div class="space-y-4 mt-4">
+                  <h1 class="text-xl font-semibold">Velvet Covvered</h1>
+                  <div class="flex space-x-1"><p class="w-3 h-3 rounded-full bg-red-600"></p> <p class="w-3 h-3 rounded-full bg-green-600"></p></div>
+                  <h1 class="text-2xl font-bold">39$</h1>
+                </div>
+              </div>
+
+              <div class="w-80 h-128">
+                <div class="group relative cursor-pointer">
+                  <img class="w-full" src="images/badroom/Rectangle 62.png" alt="">
+                  <div class="absolute flex justify-center items-center top-1/2  left-20 bg-white w-40 h-12 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-100">
+                    <button class="w-16  h-7 text-xl text-gray-500 hover:text-gray-950 transition-all duration-100 border-r-2 border-black flex justify-center items-center"><i class="fa-solid fa-basket-shopping"></i></button>
+                    <button class="w-16  h-7 text-xl text-gray-500 hover:text-gray-950 transition-all duration-100 flex justify-center items-center"><i class="fa-regular fa-heart"></i></button>
+                  </div>
+                  </div>
+                <div class="space-y-4 mt-4">
+                  <h1 class="text-xl font-semibold">Velvet Covvered</h1>
+                  <div class="flex space-x-1"><p class="w-3 h-3 rounded-full bg-red-600"></p> <p class="w-3 h-3 rounded-full bg-green-600"></p></div>
+                  <h1 class="text-2xl font-bold">39$</h1>
+                </div>
+              </div>
+
+              <div class="w-80 h-128">
+                <div class="group relative cursor-pointer">
+                  <img class="w-full" src="images/badroom/Rectangle 62.png" alt="">
+                  <div class="absolute flex justify-center items-center top-1/2  left-20 bg-white w-40 h-12 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-100">
+                    <button class="w-16  h-7 text-xl text-gray-500 hover:text-gray-950 transition-all duration-100 border-r-2 border-black flex justify-center items-center"><i class="fa-solid fa-basket-shopping"></i></button>
+                    <button class="w-16  h-7 text-xl text-gray-500 hover:text-gray-950 transition-all duration-100 flex justify-center items-center"><i class="fa-regular fa-heart"></i></button>
+                  </div>
+                  </div>
+                <div class="space-y-4 mt-4">
+                  <h1 class="text-xl font-semibold">Velvet Covvered</h1>
+                  <div class="flex space-x-1"><p class="w-3 h-3 rounded-full bg-red-600"></p> <p class="w-3 h-3 rounded-full bg-green-600"></p></div>
+                  <h1 class="text-2xl font-bold">39$</h1>
+                </div>
+              </div>
+
+              <div class="w-80 h-128">
+                <div class="group relative cursor-pointer">
+                  <img class="w-full" src="images/badroom/Rectangle 62.png" alt="">
+                  <div class="absolute flex justify-center items-center top-1/2  left-20 bg-white w-40 h-12 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-100">
+                    <button class="w-16  h-7 text-xl text-gray-500 hover:text-gray-950 transition-all duration-100 border-r-2 border-black flex justify-center items-center"><i class="fa-solid fa-basket-shopping"></i></button>
+                    <button class="w-16  h-7 text-xl text-gray-500 hover:text-gray-950 transition-all duration-100 flex justify-center items-center"><i class="fa-regular fa-heart"></i></button>
+                  </div>
+                  </div>
+                <div class="space-y-4 mt-4">
+                  <h1 class="text-xl font-semibold">Velvet Covvered</h1>
+                  <div class="flex space-x-1"><p class="w-3 h-3 rounded-full bg-red-600"></p> <p class="w-3 h-3 rounded-full bg-green-600"></p></div>
+                  <h1 class="text-2xl font-bold">39$</h1>
+                </div>
+              </div>
+
+              <div class="w-80 h-128">
+                <div class="group relative cursor-pointer">
+                  <img class="w-full" src="images/badroom/Rectangle 62.png" alt="">
+                  <div class="absolute flex justify-center items-center top-1/2  left-20 bg-white w-40 h-12 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-100">
+                    <button class="w-16  h-7 text-xl text-gray-500 hover:text-gray-950 transition-all duration-100 border-r-2 border-black flex justify-center items-center"><i class="fa-solid fa-basket-shopping"></i></button>
+                    <button class="w-16  h-7 text-xl text-gray-500 hover:text-gray-950 transition-all duration-100 flex justify-center items-center"><i class="fa-regular fa-heart"></i></button>
+                  </div>
+                  </div>
+                <div class="space-y-4 mt-4">
+                  <h1 class="text-xl font-semibold">Velvet Covvered</h1>
+                  <div class="flex space-x-1"><p class="w-3 h-3 rounded-full bg-red-600"></p> <p class="w-3 h-3 rounded-full bg-green-600"></p></div>
+                  <h1 class="text-2xl font-bold">39$</h1>
+                </div>
+              </div>
+
+              <div class="w-80 h-128">
+                <div class="group relative cursor-pointer">
+                  <img class="w-full" src="images/badroom/Rectangle 62.png" alt="">
+                  <div class="absolute flex justify-center items-center top-1/2  left-20 bg-white w-40 h-12 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-100">
+                    <button class="w-16  h-7 text-xl text-gray-500 hover:text-gray-950 transition-all duration-100 border-r-2 border-black flex justify-center items-center"><i class="fa-solid fa-basket-shopping"></i></button>
+                    <button class="w-16  h-7 text-xl text-gray-500 hover:text-gray-950 transition-all duration-100 flex justify-center items-center"><i class="fa-regular fa-heart"></i></button>
+                  </div>
+                  </div>
+                <div class="space-y-4 mt-4">
+                  <h1 class="text-xl font-semibold">Velvet Covvered</h1>
+                  <div class="flex space-x-1"><p class="w-3 h-3 rounded-full bg-red-600"></p> <p class="w-3 h-3 rounded-full bg-green-600"></p></div>
+                  <h1 class="text-2xl font-bold">39$</h1>
+                </div>
+              </div>
+
+              <div class="w-80 h-128">
+                <div class="group relative cursor-pointer">
+                  <img class="w-full" src="images/badroom/Rectangle 62.png" alt="">
+                  <div class="absolute flex justify-center items-center top-1/2  left-20 bg-white w-40 h-12 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-100">
+                    <button class="w-16  h-7 text-xl text-gray-500 hover:text-gray-950 transition-all duration-100 border-r-2 border-black flex justify-center items-center"><i class="fa-solid fa-basket-shopping"></i></button>
+                    <button class="w-16  h-7 text-xl text-gray-500 hover:text-gray-950 transition-all duration-100 flex justify-center items-center"><i class="fa-regular fa-heart"></i></button>
+                  </div>
+                  </div>
+                <div class="space-y-4 mt-4">
+                  <h1 class="text-xl font-semibold">Velvet Covvered</h1>
+                  <div class="flex space-x-1"><p class="w-3 h-3 rounded-full bg-red-600"></p> <p class="w-3 h-3 rounded-full bg-green-600"></p></div>
+                  <h1 class="text-2xl font-bold">39$</h1>
+                </div>
+              </div>
+
+              <div class="w-80 h-128">
+                <div class="group relative cursor-pointer">
+                  <img class="w-full" src="images/badroom/Rectangle 62.png" alt="">
+                  <div class="absolute flex justify-center items-center top-1/2  left-20 bg-white w-40 h-12 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-100">
+                    <button class="w-16  h-7 text-xl text-gray-500 hover:text-gray-950 transition-all duration-100 border-r-2 border-black flex justify-center items-center"><i class="fa-solid fa-basket-shopping"></i></button>
+                    <button class="w-16  h-7 text-xl text-gray-500 hover:text-gray-950 transition-all duration-100 flex justify-center items-center"><i class="fa-regular fa-heart"></i></button>
+                  </div>
+                  </div>
+                <div class="space-y-4 mt-4">
+                  <h1 class="text-xl font-semibold">Velvet Covvered</h1>
+                  <div class="flex space-x-1"><p class="w-3 h-3 rounded-full bg-red-600"></p> <p class="w-3 h-3 rounded-full bg-green-600"></p></div>
+                  <h1 class="text-2xl font-bold">39$</h1>
+                </div>
+              </div>
+
+              <div class="w-80 h-128">
+                <div class="group relative cursor-pointer">
+                  <img class="w-full" src="images/badroom/Rectangle 62.png" alt="">
+                  <div class="absolute flex justify-center items-center top-1/2  left-20 bg-white w-40 h-12 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-100">
+                    <button class="w-16  h-7 text-xl text-gray-500 hover:text-gray-950 transition-all duration-100 border-r-2 border-black flex justify-center items-center"><i class="fa-solid fa-basket-shopping"></i></button>
+                    <button class="w-16  h-7 text-xl text-gray-500 hover:text-gray-950 transition-all duration-100 flex justify-center items-center"><i class="fa-regular fa-heart"></i></button>
+                  </div>
+                  </div>
+                <div class="space-y-4 mt-4">
+                  <h1 class="text-xl font-semibold">Velvet Covvered</h1>
+                  <div class="flex space-x-1"><p class="w-3 h-3 rounded-full bg-red-600"></p> <p class="w-3 h-3 rounded-full bg-green-600"></p></div>
+                  <h1 class="text-2xl font-bold">39$</h1>
+                </div>
+              </div>
+
+
+
+            </div>
+
+            <div class="mt-20 flex justify-center items-center rounded-xl "><button class="w-48 md:w-96 h-10 font-bold bg-custom text-white border-2 border-custom hover:text-custom hover:bg-transparent transition-all duration-100">load more products</button></div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<footer class="w-full bg-custom py-12 mt-28">
+  <div class="px-24 flex justify-center">
+        <div class="lg:flex justify-center items-center space-x-20 xl:space-x-32">
+            <div class="space-y-8 w-72 flex flex-col justify-center items-center lg:justify-start lg:items-start">
+              <h1 class="text-white font-bold text-2xl">URBAN OUTFITTERS</h1>
+              <p class="text-gray-500 lg:block hidden">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+              <h3 class="text-white font-semibold space-y-4">
+                <p>121 king street, Melbourne 3000</p>
+                <p class="hidden lg:block">+61 3 8376 6284</p>
+               <p>contact@urbanoutfitters.com</p>
+              </h3>
+              <div class="w-72 flex justify-center items-center flex-col space-y-5 lg:hidden">
+                <a class="text-gray-400 hover:text-white text-sm whitespace-nowrap" href="">Your cart</a>
+                <a class="text-gray-400 hover:text-white text-sm whitespace-nowrap" href="">Your Order</a>
+                <a class="text-gray-400 hover:text-white text-sm whitespace-nowrap" href="">Compared items</a>
+                <a class="text-gray-400 hover:text-white text-sm whitespace-nowrap" href="">Wishlist items</a>
+                <a class="text-gray-400 hover:text-white text-sm whitespace-nowrap" href="">Shipping detail </a>
+              </div>
+              <div class="flex justify-center lg:justify-start items-center space-x-16">
+                <a class="font-bold text-xl text-gray-400 hover:text-white transition-all duration-100" href=""><i class="fa-brands fa-facebook"></i></a>
+                <a class="font-bold text-xl text-gray-400 hover:text-white transition-all duration-100" href=""><i class="fa-brands fa-twitter"></i></a>
+                <a class="font-bold text-xl text-gray-400 hover:text-white transition-all duration-100" href=""><i class="fa-brands fa-instagram"></i></a>
+                <a class="font-bold text-xl text-gray-400 hover:text-white transition-all duration-100" href=""><i class="fa-brands fa-youtube"></i></a>
+              </div>
+            </div>
+
+            <div class="hidden lg:block space-y-8 w-24">
+              <h1 class="text-xl text-white">SHOPPING</h1>
+              <div class="flex flex-col space-y-5">
+                <a class="text-gray-400 hover:text-white text-sm whitespace-nowrap" href="">Your cart</a>
+                <a class="text-gray-400 hover:text-white text-sm whitespace-nowrap" href="">Your Order</a>
+                <a class="text-gray-400 hover:text-white text-sm whitespace-nowrap" href="">Compared items</a>
+                <a class="text-gray-400 hover:text-white text-sm whitespace-nowrap" href="">Wishlist items</a>
+                <a class="text-gray-400 hover:text-white text-sm whitespace-nowrap" href="">Shipping detail </a>
+              </div>
+            </div>
+
+            <div class="hidden lg:block space-y-8 w-24">
+              <h1 class="text-xl text-white whitespace-nowrap">MORE LINK</h1>
+              <div class="flex flex-col space-y-5">
+                <a class="text-gray-400 hover:text-white text-sm whitespace-nowrap" href="">Blog</a>
+                <a class="text-gray-400 hover:text-white text-sm whitespace-nowrap" href="">Gift Center</a>
+                <a class="text-gray-400 hover:text-white text-sm whitespace-nowrap" href="">Buying Guides</a>
+                <a class="text-gray-400 hover:text-white text-sm whitespace-nowrap" href="">New Arrivals</a>
+                <a class="text-gray-400 hover:text-white text-sm whitespace-nowrap" href="">Clearance</a>
+              </div>
+            </div>
+
+              <div class="hidden lg:block space-y-8 w-72">
+                <h1 class="text-xl text-white whitespace-nowrap">FROM THE BLOG</h1>
+
+                <div>
+                  <div class="space-y-1 border-b-2 border-gray-500 h-36">
+                    <h1 class="text-gray-500 space-x-3 flex items-center"><p class="text-2xl">26</p><p>May</p></h1>
+                    <p class="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h1 class="text-gray-500 space-x-1 flex items-center"><p>3</p><p>comments</p></h1>
+                  </div>
+
+                  <div class="space-y-1 h-36 flex flex-col justify-end">
+                    <h1 class="text-gray-500 space-x-3 flex items-center"><p class="text-2xl">26</p><p>May</p></h1>
+                    <p class="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h1 class="text-gray-500 space-x-1 flex items-center"><p>3</p><p>comments</p></h1>
+                  </div>
+                </div>
+              </div>
+        </div>
+  </div>
+</footer>
+<div class="w-full h-10 bg-black flex justify-center items-center text-xs text-gray-500">Urban Outfitters © - All rights reserved</div>
+
+
+<script src="js/checkbox.js"></script>
+<script src="js/respMeny.js"></script>
+<script src="js/catagorie.js"></script>
+<script src="js/colorButton.js"></script>
+<script src="js/respFilter.js"></script>
+</body> 
+</html>

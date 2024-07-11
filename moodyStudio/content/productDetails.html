@@ -1,0 +1,328 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOODY STORE</title>
+  <link href="css/style.css" rel="stylesheet">
+
+  
+
+  <!-- fontawsome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="relative h-full">
+
+                                  <!-- responsive menu -->
+  <div id="opc" onclick="closeResp()"  class="absolute w-full h-full bg-black opacity-25 z-20 hidden "></div>    
+  <div id="respMenu" class="absolute left-0 w-82 h-full bg-custom z-30 hidden ">
+    <div class="flex justify-end"> <button id="close" onclick="closeResp()" class="flex justify-center items-center  w-7 h-7 rounded-full bg-white " ><i class="fa-solid fa-xmark"></i></button></div>
+      <div class="h-96 fixed mx-6">
+       <div class="relative flex items-center justify-center mt-5">
+        <input class=" h-8 outline-none bg-gray-100 rounded-lg w-64 p-5 text-lg" type="text" placeholder="Search...">
+        <button  class="absolute right-2 text-lg font-bold cursor-pointer text-gray-500 hover:text-black transition-all duration-100" for=""><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+       <div class="flex items-start flex-col space-y-7 mt-7">
+          <a class="flex justify-center items-center whitespace-nowrap text-gray-400 hover:text-white transition-all duration-100"  href="/content/index.html">HOME</a>
+          <a class="flex justify-center items-center whitespace-nowrap text-gray-400 hover:text-white transition-all duration-100"  href="/content/catagory.html">STORE</a>
+          <a class="flex justify-center items-center whitespace-nowrap text-gray-400 hover:text-white transition-all duration-100"  href="">ACCESSORIES</a>
+          <a class="flex justify-center items-center whitespace-nowrap text-gray-400 hover:text-white transition-all duration-100"  href="">BRAND</a>
+          <a class="flex justify-center items-center whitespace-nowrap text-gray-400 hover:text-white transition-all duration-100"  href="">PAGES</a>
+          <a class="flex justify-center items-center whitespace-nowrap text-gray-400 hover:text-white transition-all duration-100"  href="">CONTACT US</a>
+        </div>
+      </div>
+  </div>
+
+                                              <!-- header -->
+  <header class="w-full ">
+    <div class=" h-16">
+      <div class="h-16 flex justify-between mx-5 md:mx-24 items-center md:border-b-2 border-black">
+        <h1 class="text-lg md:text-2xl font-bold cursor-pointer"><a href="index.html">MOODY STUDIO</a></h1>
+        <div class="space-x-6 md:space-x-10 flex justify-center items-center">
+          <div class="relative hidden lg:flex items-center">
+            <input class="relative h-8 outline-none bg-gray-100 rounded-lg w-72 p-5 text-lg" type="text" placeholder="Search...">
+            <button  class="absolute right-2 text-lg font-bold cursor-pointer text-gray-500 hover:text-black transition-all duration-100" for=""><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+          <a class="text-lg font-bold cursor-pointer text-gray-500 hover:text-black transition-all duration-100"><i class="fa-regular fa-user"></i></a>
+          <a class="text-lg font-bold cursor-pointer text-gray-500 hover:text-black transition-all duration-100"  href="/content/payArea.html"><i class="fa-solid fa-basket-shopping"></i></a>
+          <a class="hidden lg:block text-lg font-bold cursor-pointer text-gray-500 hover:text-black transition-all duration-100"><i class="fa-regular fa-heart"></i></a>
+          <button id="open" onclick="openResp()" class="lg:hidden text-lg font-bold cursor-pointer text-gray-500 hover:text-black transition-all duration-100"><i class="fa-solid fa-bars"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="h-16 mt-4 mb-4 hidden lg:block">
+        <div  class="h-16 mx-24  border-b-2 border-black">
+              <div class="flex space-x-8 xl:space-x-14 justify-center items-center w-full h-16">
+                <a class=" whitespace-nowrap text-gray-500 hover:text-black transition-all duration-100"  href="/content/index.html">HOME</a>
+                <a class=" whitespace-nowrap text-gray-500 hover:text-black transition-all duration-100"  href="/content/catagory.html">STORE</a>
+                <a class=" whitespace-nowrap text-gray-500 hover:text-black transition-all duration-100"  href="">ACCESSORIES</a>
+                <a class=" whitespace-nowrap text-gray-500 hover:text-black transition-all duration-100"  href="">BRAND</a>
+                <a class=" whitespace-nowrap text-gray-500 hover:text-black transition-all duration-100"  href="">PAGES</a>
+                <a class=" whitespace-nowrap text-gray-500 hover:text-black transition-all duration-100"  href="">CONTACT US</a>
+              </div>
+        </div>
+    </div>
+  </header>
+
+
+<div class="mt-5 md:mt-16 px-5 md:px-0 md:mx-24">
+  <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
+
+      <div class="zoom-container h-105 overflow-hidden relative">
+        <img class="zoom-image transition-all duration-500" src="images/payArea/Rectangle 83.png">
+      </div>
+
+      <div class="zoom-container h-105 overflow-hidden relative hidden md:block">
+        <img class="zoom-image transition-all duration-500" src="images/payArea/Rectangle 82.png">
+      </div>
+
+      <div class="h-105 space-y-6">
+        <div class="space-y-7">
+          <h1 class="text-3xl font-bold">Checked Duvet Cover Set</h1>
+          <p class="text-2xl font-bold">39.99 $</p>
+        </div>
+
+        <div class="space-y-4">
+          <p>Light khaki green/white checks</p>
+            <div>
+              <img class="w-12 h-16 border border-black" src="images/payArea/Rectangle 83.png" >
+            </div>
+        </div>
+
+        <div class="space-y-8">
+          <a class="text-gray-500 flex justify-start items-center space-x-2" href=""><i class="fa-solid fa-location-dot"></i> <p>Not available in stores</p></a>
+          <div class="">
+            <select id="size" name="size" class="w-80 md:w-96 h-12 border border-black sm:text-sm text-gray-400 px-3" >
+                <option value="" class="" disabled selected>Select Size</option>  
+                <option value="s">S</option>
+                <option value="l">L</option>
+                <option value="xl">XL</option>
+                <option value="2xl">2XL</option>
+                <option value="3xl">3XL</option>
+            </select> 
+        </div>
+        <input class="w-80 md:w-96 h-12 border-2 border-black bg-black text-white cursor-pointer hover:bg-white hover:text-black transition-all duration-100" type="submit">
+      </div>
+  </div>
+</div>
+</div>
+
+
+
+<div class="mt-14 mx-5 lg:mx-24">
+  <div class="md:w-135 lg:w-170 xl:w-185">
+    <img class="" src="images/payArea/Rectangle 97.png" alt="">
+  </div>
+ <div class="md:w-135 lg:w-170 xl:w-185 h-80 bg-gray-50 flex justify-center items-center mt-20">
+  <div class="mt-7 space-y-4 w-135  flex flex-col justify-center items-start">
+    <h1 class="text-red-600">Conscious</h1>
+    <div class="space-y-6">
+     <p>Twin duvet cover set in soft, woven fabric made from a Tencel™lyocell and cotton blend with a printed pattern. One pillowcase. Thread count 144.</p>
+     <h1 class="flex items-center space-x-3"><p>Composition — </p><p class="text-gray-400">Cotton 50%, Lyocell 50%</p></h1>
+     <h1 class="flex items-center space-x-3"><p>Art. No. — </p><p class="text-gray-400">0643448004</p></h1>
+     </div>
+  </div>
+ </div>
+</div>
+
+
+
+
+                                                <!-- bottom slider -->
+
+  <div class="mx-20 space-y-6 mt-24 relative ">
+    <h1 class="text-3xl font-bold p-20">Also You May Like</h1>
+    <button id="prev" class="text-4xl  absolute top-96 z-20"><i class="fa-solid fa-chevron-left"></i></button>
+    <div class="flex overflow-hidden">
+          <div class="w-96 slider flex space-x-5 ">
+
+           <div class="slide">
+            <div class=" h-105 w-80">
+              <img class="w-full h-96" src="images/topRatıng/Rectangle 26.png" alt="">
+              <div class="space-y-4 mt-3">
+                <h1 class="text-xl font-bold">Flannel Duvet Cover Set</h1>
+                <div class="flex space-x-1"><p class="w-3 h-3 rounded-full bg-red-600"></p> <p class="w-3 h-3 rounded-full bg-green-600"></p> <p class="w-3 h-3 rounded-full bg-gray-400"></p></div>
+                <p class="text-2xl font-bold">30$</p>
+              </div>
+            </div>
+           </div>
+
+           <div class="slide">
+            <div class=" h-105 w-80">
+              <img class="w-full h-96" src="images/topRatıng/Rectangle 26.png" alt="">
+              <div class="space-y-4 mt-3">
+                <h1 class="text-xl font-bold">Flannel Duvet Cover Set</h1>
+                <div class="flex space-x-1"><p class="w-3 h-3 rounded-full bg-red-600"></p> <p class="w-3 h-3 rounded-full bg-green-600"></p> <p class="w-3 h-3 rounded-full bg-gray-400"></p></div>
+                <p class="text-2xl font-bold">30$</p>
+              </div>
+            </div>
+           </div>
+
+           <div class="slide">
+            <div class=" h-105 w-80">
+              <img class="w-full h-96" src="images/topRatıng/Rectangle 26.png" alt="">
+              <div class="space-y-4 mt-3">
+                <h1 class="text-xl font-bold">Flannel Duvet Cover Set</h1>
+                <div class="flex space-x-1"><p class="w-3 h-3 rounded-full bg-red-600"></p> <p class="w-3 h-3 rounded-full bg-green-600"></p> <p class="w-3 h-3 rounded-full bg-gray-400"></p></div>
+                <p class="text-2xl font-bold">30$</p>
+              </div>
+            </div>
+           </div>
+
+           <div class="slide">
+            <div class=" h-105 w-80">
+              <img class="w-full h-96" src="images/topRatıng/Rectangle 26.png" alt="">
+              <div class="space-y-4 mt-3">
+                <h1 class="text-xl font-bold">Flannel Duvet Cover Set</h1>
+                <div class="flex space-x-1"><p class="w-3 h-3 rounded-full bg-red-600"></p> <p class="w-3 h-3 rounded-full bg-green-600"></p> <p class="w-3 h-3 rounded-full bg-gray-400"></p></div>
+                <p class="text-2xl font-bold">30$</p>
+              </div>
+            </div>
+           </div>
+
+           <div class="slide">
+            <div class=" h-105 w-80">
+              <img class="w-full h-96" src="images/topRatıng/Rectangle 26.png" alt="">
+              <div class="space-y-4 mt-3">
+                <h1 class="text-xl font-bold">Flannel Duvet Cover Set</h1>
+                <div class="flex space-x-1"><p class="w-3 h-3 rounded-full bg-red-600"></p> <p class="w-3 h-3 rounded-full bg-green-600"></p> <p class="w-3 h-3 rounded-full bg-gray-400"></p></div>
+                <p class="text-2xl font-bold">30$</p>
+              </div>
+            </div>
+           </div>
+
+           <div class="slide">
+            <div class=" h-105 w-80">
+              <img class="w-full h-96" src="images/topRatıng/Rectangle 26.png" alt="">
+              <div class="space-y-4 mt-3">
+                <h1 class="text-xl font-bold">Flannel Duvet Cover Set</h1>
+                <div class="flex space-x-1"><p class="w-3 h-3 rounded-full bg-red-600"></p> <p class="w-3 h-3 rounded-full bg-green-600"></p> <p class="w-3 h-3 rounded-full bg-gray-400"></p></div>
+                <p class="text-2xl font-bold">30$</p>
+              </div>
+            </div>
+           </div>
+
+           <div class="slide">
+            <div class=" h-105 w-80">
+              <img class="w-full h-96" src="images/topRatıng/Rectangle 26.png" alt="">
+              <div class="space-y-4 mt-3">
+                <h1 class="text-xl font-bold">Flannel Duvet Cover Set</h1>
+                <div class="flex space-x-1"><p class="w-3 h-3 rounded-full bg-red-600"></p> <p class="w-3 h-3 rounded-full bg-green-600"></p> <p class="w-3 h-3 rounded-full bg-gray-400"></p></div>
+                <p class="text-2xl font-bold">30$</p>
+              </div>
+            </div>
+           </div>
+
+           <div class="slide">
+            <div class=" h-105 w-80">
+              <img class="w-full h-96" src="images/topRatıng/Rectangle 26.png" alt="">
+              <div class="space-y-4 mt-3">
+                <h1 class="text-xl font-bold">Flannel Duvet Cover Set</h1>
+                <div class="flex space-x-1"><p class="w-3 h-3 rounded-full bg-red-600"></p> <p class="w-3 h-3 rounded-full bg-green-600"></p> <p class="w-3 h-3 rounded-full bg-gray-400"></p></div>
+                <p class="text-2xl font-bold">30$</p>
+              </div>
+            </div>
+           </div>
+
+           <div class="slide">
+            <div class=" h-105 w-80">
+              <img class="w-full h-96" src="images/topRatıng/Rectangle 26.png" alt="">
+              <div class="space-y-4 mt-3">
+                <h1 class="text-xl font-bold">Flannel Duvet Cover Set</h1>
+                <div class="flex space-x-1"><p class="w-3 h-3 rounded-full bg-red-600"></p> <p class="w-3 h-3 rounded-full bg-green-600"></p> <p class="w-3 h-3 rounded-full bg-gray-400"></p></div>
+                <p class="text-2xl font-bold">30$</p>
+              </div>
+            </div>
+           </div>
+
+
+        
+
+
+          </div>
+    </div>
+    <button id="next" class="text-4xl mx-5 absolute top-96 right-0"><i class="fa-solid fa-chevron-right"></i></button>
+    
+  </div>                                              
+
+
+
+
+  
+<footer class="w-full bg-custom py-12 mt-28">
+  <div class="px-24 flex justify-center">
+        <div class="lg:flex justify-center items-center space-x-20 xl:space-x-32">
+            <div class="space-y-8 w-72 flex flex-col justify-center items-center lg:justify-start lg:items-start">
+              <h1 class="text-white font-bold text-2xl">URBAN OUTFITTERS</h1>
+              <p class="text-gray-500 lg:block hidden">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+              <h3 class="text-white font-semibold space-y-4">
+                <p>121 king street, Melbourne 3000</p>
+                <p class="hidden lg:block">+61 3 8376 6284</p>
+               <p>contact@urbanoutfitters.com</p>
+              </h3>
+              <div class="w-72 flex justify-center items-center flex-col space-y-5 lg:hidden">
+                <a class="text-gray-400 hover:text-white text-sm whitespace-nowrap" href="">Your cart</a>
+                <a class="text-gray-400 hover:text-white text-sm whitespace-nowrap" href="">Your Order</a>
+                <a class="text-gray-400 hover:text-white text-sm whitespace-nowrap" href="">Compared items</a>
+                <a class="text-gray-400 hover:text-white text-sm whitespace-nowrap" href="">Wishlist items</a>
+                <a class="text-gray-400 hover:text-white text-sm whitespace-nowrap" href="">Shipping detail </a>
+              </div>
+              <div class="flex justify-center lg:justify-start items-center space-x-16">
+                <a class="font-bold text-xl text-gray-400 hover:text-white transition-all duration-100" href=""><i class="fa-brands fa-facebook"></i></a>
+                <a class="font-bold text-xl text-gray-400 hover:text-white transition-all duration-100" href=""><i class="fa-brands fa-twitter"></i></a>
+                <a class="font-bold text-xl text-gray-400 hover:text-white transition-all duration-100" href=""><i class="fa-brands fa-instagram"></i></a>
+                <a class="font-bold text-xl text-gray-400 hover:text-white transition-all duration-100" href=""><i class="fa-brands fa-youtube"></i></a>
+              </div>
+            </div>
+
+            <div class="hidden lg:block space-y-8 w-24">
+              <h1 class="text-xl text-white">SHOPPING</h1>
+              <div class="flex flex-col space-y-5">
+                <a class="text-gray-400 hover:text-white text-sm whitespace-nowrap" href="">Your cart</a>
+                <a class="text-gray-400 hover:text-white text-sm whitespace-nowrap" href="">Your Order</a>
+                <a class="text-gray-400 hover:text-white text-sm whitespace-nowrap" href="">Compared items</a>
+                <a class="text-gray-400 hover:text-white text-sm whitespace-nowrap" href="">Wishlist items</a>
+                <a class="text-gray-400 hover:text-white text-sm whitespace-nowrap" href="">Shipping detail </a>
+              </div>
+            </div>
+
+            <div class="hidden lg:block space-y-8 w-24">
+              <h1 class="text-xl text-white whitespace-nowrap">MORE LINK</h1>
+              <div class="flex flex-col space-y-5">
+                <a class="text-gray-400 hover:text-white text-sm whitespace-nowrap" href="">Blog</a>
+                <a class="text-gray-400 hover:text-white text-sm whitespace-nowrap" href="">Gift Center</a>
+                <a class="text-gray-400 hover:text-white text-sm whitespace-nowrap" href="">Buying Guides</a>
+                <a class="text-gray-400 hover:text-white text-sm whitespace-nowrap" href="">New Arrivals</a>
+                <a class="text-gray-400 hover:text-white text-sm whitespace-nowrap" href="">Clearance</a>
+              </div>
+            </div>
+
+              <div class="hidden lg:block space-y-8 w-72">
+                <h1 class="text-xl text-white whitespace-nowrap">FROM THE BLOG</h1>
+
+                <div>
+                  <div class="space-y-1 border-b-2 border-gray-500 h-36">
+                    <h1 class="text-gray-500 space-x-3 flex items-center"><p class="text-2xl">26</p><p>May</p></h1>
+                    <p class="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h1 class="text-gray-500 space-x-1 flex items-center"><p>3</p><p>comments</p></h1>
+                  </div>
+
+                  <div class="space-y-1 h-36 flex flex-col justify-end">
+                    <h1 class="text-gray-500 space-x-3 flex items-center"><p class="text-2xl">26</p><p>May</p></h1>
+                    <p class="text-gray-300">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h1 class="text-gray-500 space-x-1 flex items-center"><p>3</p><p>comments</p></h1>
+                  </div>
+                </div>
+              </div>
+        </div>
+  </div>
+</footer>
+<div class="w-full h-10 bg-black flex justify-center items-center text-xs text-gray-500">Urban Outfitters © - All rights reserved</div>
+
+
+
+<script src="js/respMeny.js"></script>
+<script src="js/zoomImg.js"></script>
+<script src="js/slider3.js"></script>
+</body> 
+</html>
